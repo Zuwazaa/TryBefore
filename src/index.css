@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #f7f4ec;
+  --color-paper: #fbf9f4;
+  --color-linen: #e9e3d5;
+  --color-line: #d8d1bf;
+  --color-ink: #26282a;
+  --color-ink-soft: #5b5f58;
+  --color-sage: #6f7f62;
+  --color-sage-deep: #3f4a38;
+  --color-sage-wash: #e3e8da;
+  --color-brick: #b5503c;
+  --color-brick-wash: #f5e1da;
+  --color-ochre: #8f6d1f;
+  --color-ochre-wash: #f3ead2;
+  --font-serif: "Newsreader Variable", Georgia, serif;
+  --font-sans: "Instrument Sans Variable", system-ui, sans-serif;
+  --shadow-panel: 0 1px 2px rgb(38 40 42 / 0.06), 0 8px 24px -12px rgb(38 40 42 / 0.18);
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--color-ivory);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .font-display { font-family: var(--font-serif); letter-spacing: -0.01em; }
+
+:focus-visible { outline: 2px solid var(--color-sage); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+.scroll-thin { scrollbar-width: thin; scrollbar-color: var(--color-line) transparent; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.25s ease-out both; }
+
+@keyframes slide { 0% { transform: translateX(-100%); } 100% { transform: translateX(300%); } }
